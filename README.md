@@ -30,11 +30,18 @@ Ich möchte mich besonders bei den Entwicklern der folgenden Projekte bedanken:
   → Vielen Dank für die großartige Arbeit an **KernelSU-Next** und die einfache Implementierungsmöglichkeit. Das hat die Integration dieses Features in diesem Kernel enorm vereinfacht.
 
 - **[SusFS für KernelSU](https://gitlab.com/simonpunk/susfs4ksu/-/tree/gki-android12-5.10?ref_type=heads)**  
-  → Ein riesiges Dankeschön an die Entwickler von **SusFS**, deren Arbeit es mir ermöglicht hat, **SusFS** einfach durch Patchdateien zu integrieren. Das hat den Implementierungsprozess sehr viel effizienter gemacht.
+  → Ein riesiges Dankeschön an Simonpunk den Entwickler von **SusFS**, dessen Arbeit es mir ermöglicht hat, **SusFS** einfach durch Patchdateien zu integrieren. Das hat den Implementierungsprozess sehr viel effizienter gemacht.
+
+- [**topjohnwu/Magisk**](https://github.com/topjohnwu/Magisk)  
+  Großer Dank geht auch an [topjohnwu](https://github.com/topjohnwu) für die Entwicklung von **Magisk**, insbesondere des Submoduls `magiskboot`, das als mächtiges Werkzeug zur Manipulation und Analyse von Boot-Images dient.
+
+- [**magojohnji/magiskboot-linux**](https://github.com/magojohnji/magiskboot-linux)  
+  Vielen Dank an [magojohnji](https://github.com/magojohnji) für seine Arbeit zum erhalt der kompilierten utility `magiskboot`, welche den Umgang mit bestehenden `boot.img` Dateien deutlich erleichtert.
 
 Ein großes Dankeschön geht an **[WildPlusKernel](https://github.com/WildPlusKernel/GKI_KernelSU_SUSFS)** –  
 seine Arbeit an einem GKI-kompatiblen Kernel mit integriertem **KernelSU/-next/MKSU + SusFS** war eine wichtige Referenz für mich.  
-Seiner GitHub Workflows waren grundlegend, um Verständnis für 5.10 Kernel zu erlangen.  
+Seiner GitHub Workflows waren grundlegend, um Verständnis für 5.10 Kernel zu erlangen. 
+Ebenfalls sind seine Patchdateien unverzichtbar für die ordentliche Implementierung von KernelSU-Next! 
 Danke für deinen Beitrag zur Open-Source-Kernel-Community!
 
 ---
