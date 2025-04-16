@@ -104,9 +104,9 @@ export BUILD_CONFIG="../out/target/product/a15/obj/KERNEL_OBJ/build.config"
 cd ../kernel
 LTO=thin ./build/build.sh
 cd ../../maggi
-cp ../out/target/product/a15/obj/KERNEL_OBJ/kernel-5.10/arch/arm64/boot/Image ./
+cp ../Kernel/out/target/product/a15/obj/KERNEL_OBJ/kernel-5.10/arch/arm64/boot/Image ./
 mv Image kernel
 #echo "copied Image for magiskboot"
 ../github.com-topjohnwu/x86_64/magiskboot repack ../samsungbootimg/boot.img boot.img
-../github.com-topjohnwu/x86_64/magiskboot sign boot.img ../private_key.pk8
+../github.com-topjohnwu/x86_64/magiskboot sign boot.img ../certificate.pem
 #echo "magiskboot packed and signed boot.img"
