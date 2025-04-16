@@ -5,7 +5,7 @@ export OUT_DIR="../out/target/product/a15/obj/KERNEL_OBJ"
 export DIST_DIR="../out/target/product/a15/obj/KERNEL_OBJ"
 export BUILD_CONFIG="../out/target/product/a15/obj/KERNEL_OBJ/build.config"
 #echo "generated buildconfig and exported build vars"
-cd ../kernel
+cd ../Kernel/kernel
 LTO=thin ./build/build.sh
 cd ../../maggi
 cp ../Kernel/out/target/product/a15/obj/KERNEL_OBJ/kernel-5.10/arch/arm64/boot/Image ./
