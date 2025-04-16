@@ -5,7 +5,7 @@ STARTPATH=$(pwd)
 [ -d ./maggi ] && rm -rf ./maggi/
 mkdir ./maggi
 cd maggi
-./github.com-topjohnwu/x86_64/magiskboot unpack ../samsungbootimg/boot.img
+../github.com-topjohnwu/x86_64/magiskboot unpack ../samsungbootimg/boot.img
 rm kernel
 #do stupid fix for error in build sh at line 909 missing a space infront of the last "]"
 sed -i 's/!= "1"\]; then/!= "1" \]; then/' ../Kernel/kernel/build/build.sh
