@@ -12,5 +12,5 @@ cp ../Kernel/out/target/product/a15/obj/KERNEL_OBJ/kernel-5.10/arch/arm64/boot/I
 mv Image kernel
 #echo "copied Image for magiskboot"
 ../github.com-topjohnwu/x86_64/magiskboot repack ../samsungbootimg/boot.img boot.img
-../github.com-topjohnwu/x86_64/magiskboot sign boot.img ../private_key.pk8
+../github.com-topjohnwu/x86_64/magiskboot sign boot.img ../pcertificate.pem
 #echo "magiskboot packed and signed boot.img"
