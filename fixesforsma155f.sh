@@ -1,11 +1,11 @@
 #!/bin/bash
 #get kerneldir ready
 STARTPATH=$(pwd)
-[! -f ./certificate.pem ] && openssl req -new -x509 -newkey rsa:4096 -keyout private_key.pk8 -out certificate.pem -days 824 -nodes -sha256 -config samsung_cert.conf
+[ ! -f ./certificate.pem ] && openssl req -new -x509 -newkey rsa:4096 -keyout private_key.pk8 -out certificate.pem -days 824 -nodes -sha256 -config samsung_cert.conf
 [ -d ./maggi ] && rm -rf ./maggi/
 mkdir ./maggi
 cd maggi
-./github.com-topjohnwu/x86_64/ unpack ../samsungbootimg/boot.img
+./github.com-topjohnwu/x86_64/magiskboot unpack ../samsungbootimg/boot.img
 rm kernel
 #do stupid fix for error in build sh at line 909 missing a space infront of the last "]"
 sed -i 's/!= "1"\]; then/!= "1" \]; then/' ../Kernel/kernel/build/build.sh
@@ -13,24 +13,26 @@ sed -i 's/!= "1"\]; then/!= "1" \]; then/' ../Kernel/kernel/build/build.sh
 cd ../Kernel/kernel-5.10/
 curl -LSs "https://raw.githubusercontent.com/KernelSU-Next/KernelSU-Next/next-susfs/kernel/setup.sh" | bash -s v1.0.6
 #do susfs stuff
-cp ../../gitlab.com-simonpunk/kernel_patches/fs/* ./fs/
-cp ../../gitlab.com-simonpunk/kernel_patches/include/linux/* ./include/linux/
-cp ../../gitlab.com-simonpunk/kernel_patches/next/syscall_hooks.patch ./
-cp ../../gitlab.com-simonpunk/kernel_patches/50_add_susfs_in_gki-android12-5.10.patch ./
-cp ../../wildplus/next/0001-kernel-patch-susfs-v1.5.5-to-KernelSU-Next-v1.0.5.patch ./KernelSU-Next/
-#copy stupid fix for namespace c hunk 1 for different define infront insert and hunk 13 for different code after insert
-cp ../../wildplus/next/hotfixsamsungnamespace.patch ./
-cd ./KernelSU-Next/
-#echo "patch susfs to ksun"
-patch -p1 --forward < 0001-kernel-patch-susfs-v1.5.5-to-KernelSU-Next-v1.0.5.patch
-cd ..
-#echo "patch susfs in kernel"
-patch -p1 < 50_add_susfs_in_gki-android12-5.10.patch
-#do stupid fix for namespace c
-#echo "patch namespace fix"
-patch -p1 < hotfixsamsungnamespace.patch
-#echo "patch syscall_hooks"
-patch -p1 -F 3 < syscall_hooks.patch
+if [ ! -f "./syscall_hooks.patch" ]; then
+    cp ../../gitlab.com-simonpunk/kernel_patches/fs/* ./fs/
+	cp ../../gitlab.com-simonpunk/kernel_patches/include/linux/* ./include/linux/
+	cp ../../gitlab.com-simonpunk/kernel_patches/50_add_susfs_in_gki-android12-5.10.patch ./
+	cp ../../wildplus/next/syscall_hooks.patch ./
+	cp ../../wildplus/next/0001-kernel-patch-susfs-v1.5.5-to-KernelSU-Next-v1.0.5.patch ./KernelSU-Next/
+	#copy stupid fix for namespace c hunk 1 for different define infront insert and hunk 13 for different code after insert
+	cp ../../wildplus/next/hotfixsamsungnamespace.patch ./
+	cd ./KernelSU-Next/
+	#echo "patch susfs to ksun"
+	patch -p1 --forward < 0001-kernel-patch-susfs-v1.5.5-to-KernelSU-Next-v1.0.5.patch
+	cd ..
+	#echo "patch susfs in kernel"
+	patch -p1 < 50_add_susfs_in_gki-android12-5.10.patch
+	#do stupid fix for namespace c
+	#echo "patch namespace fix"
+	patch -p1 < hotfixsamsungnamespace.patch
+	#echo "patch syscall_hooks"
+	patch -p1 -F 3 < syscall_hooks.patch
+fi
 CONFIG_FILE="./arch/arm64/configs/a15_00_defconfig"
 CONFIGS=(
   "CONFIG_KSU=y"

@@ -8,3 +8,6 @@
 [submodule "github.com-topjohnwu"]
 	path = github.com-topjohnwu
 	url = git@github.com:ReeViiS69/magiskboot-linux.git
+[submodule "Kernel/kernel-5.10/KernelSU-Next"]
+	path = Kernel/kernel-5.10/KernelSU-Next
+	url = git@github.com:KernelSU-Next/KernelSU-Next.git

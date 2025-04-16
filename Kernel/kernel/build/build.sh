@@ -906,7 +906,7 @@ if [ -n "${MODULES_ORDER}" ]; then
   fi
 fi
 
-if [ "${KMI_SYMBOL_LIST_STRICT_MODE}" = "1" ] && [ "${SKIP_KMI_COMPARING}" != "1"]; then
+if [ "${KMI_SYMBOL_LIST_STRICT_MODE}" = "1" ] && [ "${SKIP_KMI_COMPARING}" != "1" ]; then
   echo "========================================================"
   echo " Comparing the KMI and the symbol lists:"
   set -x

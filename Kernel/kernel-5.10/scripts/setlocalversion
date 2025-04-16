@@ -231,4 +231,4 @@ sec_scm_version()
 
 res=$(sec_scm_version)
 
-echo "$res"
+echo "-android12-9-28575149"

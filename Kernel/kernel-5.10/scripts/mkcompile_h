@@ -48,7 +48,7 @@ if [ -n "$PREEMPT_RT" ] ; then CONFIG_FLAGS="$CONFIG_FLAGS PREEMPT_RT"; fi
 
 # Truncate to maximum length
 UTS_LEN=64
-UTS_VERSION="$(echo $UTS_VERSION $CONFIG_FLAGS $TIMESTAMP | cut -b -$UTS_LEN)"
+UTS_VERSION="#1 SMP PREEMPT Thu Mar 06 09:35:51 UTC 2025"
 
 # Generate a temporary compile.h
 
