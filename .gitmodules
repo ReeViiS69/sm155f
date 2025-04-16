@@ -1,0 +1,7 @@
+
+[submodule "wildplus"]
+	path = wildplus
+	url = git@github.com:ReeViiS69/wildkernel_patches.git
+[submodule "gitlab.com-simonpunk"]
+	path = gitlab.com-simonpunk
+	url = git@gitlab.com:ReeViiS69/minimalsusfs.git
