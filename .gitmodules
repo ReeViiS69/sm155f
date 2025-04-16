@@ -5,3 +5,6 @@
 [submodule "gitlab.com-simonpunk"]
 	path = gitlab.com-simonpunk
 	url = git@gitlab.com:ReeViiS69/minimalsusfs.git
+[submodule "github.com-topjohnwu"]
+	path = github.com-topjohnwu
+	url = git@github.com:ReeViiS69/magiskboot-linux.git
