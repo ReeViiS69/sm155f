@@ -37,6 +37,11 @@ Ich arbeite daran, den Samsung-Kernel so zu erweitern, dass er Root durch folgen
 ## 🧱 Struktur
 
 Der Samsung Kernelcode befindet sich nun im Unterordner `Kernel/` für mehr Übersichtlichkeit.
+Das Orginal Samsung A155FXXS5BYC2 boot.img ist im Unterordner `samsungbootimg/`
+Topjohnwus magiskboot gebaut durch magojohnji liegt im Unterordner `github.com-topjohnwu @ e791d67`
+Simonpunks susfs liegt im Unterordner `gitlab.com-simonpunk @ 6b4eaeb`
+TheWildJames ksun susfs patches liegen im Unterordner `wildplus @ 093e5bf`
+KernelSU liegt zur veranschaulichung im adj4build branch im Unterordner `Kernel/kernel-5.10/` wird aber in anderen branchen nur live geladen beim Kompilieren
 
 ---
 
@@ -45,7 +50,7 @@ Der Samsung Kernelcode befindet sich nun im Unterordner `Kernel/` für mehr Übe
 Ich möchte mich besonders bei den Entwicklern der folgenden Projekte bedanken:
 
 - **[KernelSU-Next](https://github.com/KernelSU-Next/KernelSU-Next/releases)**  
-  → Vielen Dank für die großartige Arbeit an **KernelSU-Next** und die einfache Implementierungsmöglichkeit. Das hat die Integration dieses Features in diesem Kernel enorm vereinfacht.
+  → Vielen Dank an alle mit wirkenden für die großartige Weiterarbeit an **KernelSU-Next** sowie **KernelSU**(https://github.com/tiann/KernelSU) der grundlage, für die einfache Implementierungsmöglichkeit. Das hat die Integration dieses Features in diesem Kernel enorm vereinfacht.
 
 - **[SusFS für KernelSU](https://gitlab.com/simonpunk/susfs4ksu/-/tree/gki-android12-5.10?ref_type=heads)**  
   → Ein riesiges Dankeschön an Simonpunk den Entwickler von **SusFS**, dessen Arbeit es mir ermöglicht hat, **SusFS** einfach durch Patchdateien zu integrieren. Das hat den Implementierungsprozess sehr viel effizienter gemacht.
@@ -69,5 +74,6 @@ Danke für deinen Beitrag zur Open-Source-Kernel-Community!
 Dieses Projekt steht unter der **GNU General Public License Version 2 (GPLv2)**.  
 Weitere Informationen findest du in der [LICENSE](./LICENSE)-Datei.
 
+BITTE KORRIGIERT MICH HIER WENN DAS NICHT STIMMT, CHATGPT HAT GEHOLFEN DIE LIZENZ ZU WÄHLEN WEIL DER SAMSUNG KERNEL DIE LIZENZ HABEN SOLL!
 ---
 
