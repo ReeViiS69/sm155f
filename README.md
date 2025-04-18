@@ -5,6 +5,24 @@ Dieses Repository enthält die modifizierten Kernelquellen für das **Samsung Ga
 
 ---
 
+## 🧪 Projektstatus
+
+Dieses Repository befindet sich in aktiver Entwicklung, V1.0.0 funktioniert einwandfrei und ist uptodate, weitere Updates folgen bei ksunext und susfs release.  
+
+https://github.com/ReeViiS69/sm155f/releases/tag/v1.0.0
+
+KernelSU-Next 1.0.6
+SusFS 1.5.5
+Samsung A155FXXS5BYC1(2) 5.10.205-android12-9-28575149 #1 SMP PREEMPT Thu Mar 06 09:35:51 UTC 2025
+
+clone the git with:
+git clone --recurse-submodules git@github.com:ReeViiS69/sm155f.git -b buildyourself
+run fixesforsma155f.sh in its own location (chmod +x ./fixesforsma155f.sh)
+copy the boot.img from ./maggi/ into boot.tar for flash with odin AP
+
+
+Pull Requests, Vorschläge und Diskussionen sind herzlich willkommen!
+
 ## ✨ Ziel des Projekts
 
 Ich arbeite daran, den Samsung-Kernel so zu erweitern, dass er Root durch folgende Features unterstützt:
@@ -53,9 +71,3 @@ Weitere Informationen findest du in der [LICENSE](./LICENSE)-Datei.
 
 ---
 
-## 🧪 Projektstatus
-
-Dieses Repository befindet sich in aktiver Entwicklung.  
-Ziel ist es, einen **rootfähigen, stabilen und entwicklerfreundlichen Kernel für das Galaxy A15 4G** bereitzustellen.
-
-Pull Requests, Vorschläge und Diskussionen sind herzlich willkommen!
