@@ -12,12 +12,18 @@ Dieses Repository befindet sich in aktiver Entwicklung, V1.0.0 funktioniert einw
 https://github.com/ReeViiS69/sm155f/releases/tag/v1.0.0
 
 KernelSU-Next 1.0.6
+
 SusFS 1.5.5
-Samsung A155FXXS5BYC1(2) 5.10.205-android12-9-28575149 #1 SMP PREEMPT Thu Mar 06 09:35:51 UTC 2025
+
+Samsung A155FXXS5BYC1(2) 
+5.10.205-android12-9-28575149 #1 SMP PREEMPT Thu Mar 06 09:35:51 UTC 2025
 
 clone the git with:
+
 git clone --recurse-submodules git@github.com:ReeViiS69/sm155f.git -b buildyourself
+
 run fixesforsma155f.sh in its own location (chmod +x ./fixesforsma155f.sh)
+
 copy the boot.img from ./maggi/ into boot.tar for flash with odin AP
 
 
