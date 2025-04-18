@@ -43,10 +43,15 @@ Ich arbeite daran, den Samsung-Kernel so zu erweitern, dass er Root durch folgen
 ## 🧱 Struktur
 
 Der Samsung Kernelcode befindet sich nun im Unterordner `Kernel/` für mehr Übersichtlichkeit.
+
 Das Orginal Samsung A155FXXS5BYC2 boot.img ist im Unterordner `samsungbootimg/`
+
 Topjohnwus magiskboot gebaut durch magojohnji liegt im Unterordner `github.com-topjohnwu @ e791d67`
+
 Simonpunks susfs liegt im Unterordner `gitlab.com-simonpunk @ 6b4eaeb`
+
 TheWildJames ksun susfs patches liegen im Unterordner `wildplus @ 093e5bf`
+
 KernelSU liegt zur veranschaulichung im adj4build branch im Unterordner `Kernel/kernel-5.10/` wird aber in anderen branchen nur live geladen beim Kompilieren
 
 ---
