@@ -20,7 +20,7 @@ Samsung A155FXXS5BYC1(2)
 
 clone the git with:
 
-git clone --recurse-submodules git@github.com:ReeViiS69/sm155f.git -b buildyourself
+git clone --recurse-submodules https://github.com/ReeViiS69/sm155f.git -b buildyourself
 
 run fixesforsma155f.sh in its own location (chmod +x ./fixesforsma155f.sh)
 
