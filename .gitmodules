@@ -1,10 +1,10 @@
 
 [submodule "wildplus"]
 	path = wildplus
-	url = https://github.com/ReeViiS69/magiskboot-linux.git
+	url = https://github.com/ReeViiS69/wildkernel_patches.git
 [submodule "gitlab.com-simonpunk"]
 	path = gitlab.com-simonpunk
 	url = https://gitlab.com/simonpunk/susfs4ksu.git
 [submodule "github.com-topjohnwu"]
 	path = github.com-topjohnwu
-	url = https://github.com/ReeViiS69/wildkernel_patches.git
+	url = https://github.com/ReeViiS69/magiskboot-linux.git
