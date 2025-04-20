@@ -11,7 +11,7 @@ rm kernel
 sed -i 's/!= "1"\]; then/!= "1" \]; then/' ../Kernel/kernel/build/build.sh
 #do ksun
 cd ../Kernel/kernel-5.10/
-curl -LSs "https://raw.githubusercontent.com/KernelSU-Next/KernelSU-Next/next-susfs/kernel/setup.sh" | bash -s v1.0.6
+curl -LSs "https://raw.githubusercontent.com/KernelSU-Next/KernelSU-Next/next/kernel/setup.sh" | bash -s v1.0.6
 #do susfs stuff
 if [ ! -f "./syscall_hooks.patch" ]; then
     cp ../../gitlab.com-simonpunk/kernel_patches/fs/* ./fs/
