@@ -52,7 +52,9 @@ Simonpunks susfs liegt im Unterordner `gitlab.com-simonpunk @ 6b4eaeb`
 
 TheWildJames ksun susfs patches liegen im Unterordner `wildplus @ 093e5bf`
 
-KernelSU liegt zur veranschaulichung im adj4build branch im Unterordner `Kernel/kernel-5.10/` wird aber in anderen branchen nur live geladen beim Kompilieren
+KernelSU liegt zur veranschaulichung im adj4build-branch im Unterordner `Kernel/kernel-5.10/`, wird aber in anderen branchs nur live geladen beim Kompilieren
+
+meine Anpassungen sind alle in `/fixesforsma155f.sh`. Bis auf den Samsungsusfspatch. der liegt in `wildplus @ 093e5bf/next/hotfixsamsungnamespace.patch`
 
 ---
 
@@ -82,8 +84,9 @@ Danke für deinen Beitrag zur Open-Source-Kernel-Community!
 
 ## 📜 Lizenz
 
-Dieses Projekt steht unter der **GNU General Public License Version 2 (GPLv2)**.  
+Der Samsung-Kernel in `/Kernel` steht unter der **GNU General Public License Version 2 (GPLv2)**.  
 Weitere Informationen findest du in der [LICENSE](./LICENSE)-Datei.
+Der Rest dieser Repository steht unter **GNU General Public License Version 3 (GPLv3)**, wenn nicht anders deklariert in den Submodulen.
 
 BITTE KORRIGIERT MICH HIER WENN DAS NICHT STIMMT, CHATGPT HAT GEHOLFEN DIE LIZENZ ZU WÄHLEN WEIL DER SAMSUNG KERNEL DIE LIZENZ HABEN SOLL!
 ---
