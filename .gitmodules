@@ -2,6 +2,7 @@
 [submodule "gitlab.com-simonpunk"]
 	path = gitlab.com-simonpunk
 	url = https://gitlab.com/ReeViiS69/minimalsusfs.git
+	branch = minimalgki-android12-5.10
 [submodule "wildplus"]
 	path = wildplus
 	url = https://github.com/ReeViiS69/wildkernel_patches.git
