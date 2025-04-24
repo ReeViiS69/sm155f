@@ -48,7 +48,7 @@ Das Orginal Samsung A155FXXS5BYC2 boot.img ist im Unterordner `samsungbootimg/`
 
 Topjohnwus magiskboot gebaut durch magojohnji liegt im Unterordner `github.com-topjohnwu @ e791d67`
 
-Simonpunks susfs liegt im Unterordner `gitlab.com-simonpunk @ 6b4eaeb`
+Simonpunks susfs liegt im Unterordner `gitlab.com-simonpunk @ 53eaa44`
 
 TheWildJames ksun susfs patches liegen im Unterordner `wildplus @ 093e5bf`
 
