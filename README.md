@@ -7,16 +7,16 @@ Dieses Repository enthält die modifizierten Kernelquellen für das **Samsung Ga
 
 ## 🧪 Projektstatus
 
-https://github.com/ReeViiS69/sm155f/releases/tag/v1.0.2
+https://github.com/ReeViiS69/sm155f/releases/tag/v1.0.3
 
-KernelSU-Next 1.0.6
+KernelSU-Next 1.0.7
 SusFS 1.5.7
 
 Samsung A155FXXS5BYC2 5.10.205-android12-9-28575149 #1 SMP PREEMPT Thu Mar 06 09:35:51 UTC 2025
 
 clone the git with:
 
-git clone --recurse-submodules https://github.com/ReeViiS69/sm155f.git -b bys-susfs1.5.7
+git clone --recurse-submodules https://github.com/ReeViiS69/sm155f.git -b bys-157susfs4ksun107
 
 run fixesforsma155f.sh in its own location (chmod +x ./fixesforsma155f.sh)
 
