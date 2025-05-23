@@ -1,12 +1,13 @@
 
-[submodule "gitlab.com-simonpunk"]
-	path = gitlab.com-simonpunk
-	url = https://gitlab.com/ReeViiS69/minimalsusfs.git
-	branch = bys-susfs1.5.7
 [submodule "wildplus"]
 	path = wildplus
 	url = https://github.com/ReeViiS69/wildkernel_patches.git
-	branch = susfs1.5.7
+	branch = 157susfs4ksun107
+[submodule "gitlab.com-simonpunk"]
+	path = gitlab.com-simonpunk
+	url = https://gitlab.com/ReeViiS69/minimalsusfs.git
+	branch = minimalgki-android12-5.10
 [submodule "github.com-topjohnwu"]
 	path = github.com-topjohnwu
 	url = https://github.com/ReeViiS69/magiskboot-linux.git
+	branch = main

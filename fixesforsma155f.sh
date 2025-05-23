@@ -11,19 +11,22 @@ rm kernel
 sed -i 's/!= "1"\]; then/!= "1" \]; then/' ../Kernel/kernel/build/build.sh
 #do ksun
 cd ../Kernel/kernel-5.10/
-curl -LSs "https://raw.githubusercontent.com/KernelSU-Next/KernelSU-Next/next/kernel/setup.sh" | bash -s v1.0.6
+curl -LSs "https://raw.githubusercontent.com/KernelSU-Next/KernelSU-Next/next/kernel/setup.sh" | bash -s v1.0.7
 #do susfs stuff
 if [ ! -f "./syscall_hooks.patch" ]; then
     cp ../../gitlab.com-simonpunk/kernel_patches/fs/* ./fs/
 	cp ../../gitlab.com-simonpunk/kernel_patches/include/linux/* ./include/linux/
+	cp ../../gitlab.com-simonpunk/kernel_patches/KernelSU/10_enable_susfs_for_ksu.patch ./KernelSU-Next/
 	cp ../../gitlab.com-simonpunk/kernel_patches/50_add_susfs_in_gki-android12-5.10.patch ./
 	cp ../../wildplus/next/syscall_hooks.patch ./
-	cp ../../wildplus/next/0001-kernel-patch-susfs-v1.5.5-to-KernelSU-Next-v1.0.5.patch ./KernelSU-Next/
+	cp ../../wildplus/next/157susfs4ksun107.patch ./KernelSU-Next/
 	#copy stupid fix for namespace c hunk 1 for different define infront insert and hunk 13 for different code after insert
 	cp ../../wildplus/next/hotfixsamsungnamespace.patch ./
 	cd ./KernelSU-Next/
 	#echo "patch susfs to ksun"
-	patch -p1 --forward < 0001-kernel-patch-susfs-v1.5.5-to-KernelSU-Next-v1.0.5.patch
+	patch -p1 --forward < 10_enable_susfs_for_ksu.patch
+	#echo "patch samsung adjusted susfs to ksun as a fix"
+	patch -p1 --forward < 157susfs4ksun107.patch
 	cd ..
 	#echo "patch susfs in kernel"
 	patch -p1 < 50_add_susfs_in_gki-android12-5.10.patch
@@ -78,6 +81,7 @@ sed -i -E '/^CONFIG_(SECURITY_DEFEX|PROCA|FIVE|UH|RKP|KDP|KDP_CRED|KDP_NS|KDP_TE
 #	'CONFIG_DEFAULT_TCP_CONG="bbr"'
 #	'CONFIG_DEFAULT_RENO=n'
 #	'CONFIG_DEFAULT_CUBIC=n'
+#	'CONFIG_TCP_CONG_CUBIC=n'
 #)
 #for bbr in "${BBRS[@]}"; do
 #	key=$(echo "$bbr" | cut -d= -f1)
