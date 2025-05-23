@@ -19,15 +19,16 @@ if [ ! -f "./syscall_hooks.patch" ]; then
 	cp ../../gitlab.com-simonpunk/kernel_patches/KernelSU/10_enable_susfs_for_ksu.patch ./KernelSU-Next/
 	cp ../../gitlab.com-simonpunk/kernel_patches/50_add_susfs_in_gki-android12-5.10.patch ./
 	cp ../../wildplus/next/syscall_hooks.patch ./
-	cp ../../wildplus/next/157susfs4ksun107.patch ./KernelSU-Next/
+	cp ../../wildplus/next/157susfs4ksun107.patch ./KernelSU-Next/kernel/
 	#copy stupid fix for namespace c hunk 1 for different define infront insert and hunk 13 for different code after insert
 	cp ../../wildplus/next/hotfixsamsungnamespace.patch ./
 	cd ./KernelSU-Next/
 	#echo "patch susfs to ksun"
 	patch -p1 --forward < 10_enable_susfs_for_ksu.patch
 	#echo "patch samsung adjusted susfs to ksun as a fix"
+ 	cd ./kernel/
 	patch -p1 --forward < 157susfs4ksun107.patch
-	cd ..
+	cd ../..
 	#echo "patch susfs in kernel"
 	patch -p1 < 50_add_susfs_in_gki-android12-5.10.patch
 	#do stupid fix for namespace c
