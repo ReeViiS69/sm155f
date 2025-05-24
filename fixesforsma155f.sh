@@ -96,6 +96,7 @@ sed -i -E '/^CONFIG_(SECURITY_DEFEX|PROCA|FIVE|UH|RKP|KDP|KDP_CRED|KDP_NS|KDP_TE
 #configure the Kernel metadata
 sed -i '$s|echo "\$res"|echo "-android12-9-28575149"|' ./scripts/setlocalversion
 perl -pi -e 's{UTS_VERSION="\$\(echo \$UTS_VERSION \$CONFIG_FLAGS \$TIMESTAMP \| cut -b -\$UTS_LEN\)"}{UTS_VERSION="#1 SMP PREEMPT Thu Mar 06 09:35:51 UTC 2025"}' ./scripts/mkcompile_h
+sed -i 's/-dirty//' ./scripts/setlocalversion
 #echo "kernel metadata spoofed"
 #do kernelbuilding
 python2 scripts/gen_build_config.py --kernel-defconfig a15_00_defconfig --kernel-defconfig-overlays "entry_level.config" -m user -o ../out/target/product/a15/obj/KERNEL_OBJ/build.config

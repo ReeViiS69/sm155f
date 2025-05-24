@@ -1,8 +1,4 @@
 
-[submodule "wildplus"]
-	path = wildplus
-	url = https://github.com/ReeViiS69/wildkernel_patches.git
-	branch = 157susfs4ksun107
 [submodule "gitlab.com-simonpunk"]
 	path = gitlab.com-simonpunk
 	url = https://gitlab.com/ReeViiS69/minimalsusfs.git
@@ -11,3 +7,7 @@
 	path = github.com-topjohnwu
 	url = https://github.com/ReeViiS69/magiskboot-linux.git
 	branch = main
+[submodule "wildplus"]
+	path = wildplus
+	url = https://github.com/ReeViiS69/wildkernel_patches.git
+	branch = 157susfs4ksun107
