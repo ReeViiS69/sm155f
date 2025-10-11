@@ -12,15 +12,15 @@ sed -i 's/!= "1"\]; then/!= "1" \]; then/' ../Kernel/kernel/build/build.sh
 #do ksun
 cd ../Kernel/kernel-5.10/
 find . -type f ! -perm -u=w -exec chmod u+w {} +
-curl -LSs "https://raw.githubusercontent.com/KernelSU-Next/KernelSU-Next/next/kernel/setup.sh" | bash -s v1.0.9
+curl -LSs "https://raw.githubusercontent.com/KernelSU-Next/KernelSU-Next/next/kernel/setup.sh" | bash -s v1.1.1
 #do susfs stuff
-if [ ! -f "./scope_min_manual_hooks_v1.4.patch" ]; then
+if [ ! -f "./scope_min_manual_hooks_v1.5.patch" ]; then
     cp ../../gitlab.com-simonpunk/kernel_patches/fs/* ./fs/
 	cp ../../gitlab.com-simonpunk/kernel_patches/include/linux/* ./include/linux/
 	cp ../../gitlab.com-simonpunk/kernel_patches/KernelSU/10_enable_susfs_for_ksu.patch ./KernelSU-Next/
 	cp ../../gitlab.com-simonpunk/kernel_patches/50_add_susfs_in_gki-android12-5.10.patch ./
-	cp ../../wildplus/next/scope_min_manual_hooks_v1.4.patch ./
-	cp ../../wildplus/next/159susfs4ksun109.patch ./KernelSU-Next/kernel/
+	cp ../../wildplus/next/scope_min_manual_hooks_v1.5.patch ./
+	cp ../../wildplus/next/1511susfs4ksun111.patch ./kernel
 	#copy stupid fix for namespace c hunk 1 for different define infront insert and hunk 13 for different code after insert
 	cp ../../wildplus/next/hotfixsamsungnamespace.patch ./
 	cd ./KernelSU-Next/
@@ -28,15 +28,15 @@ if [ ! -f "./scope_min_manual_hooks_v1.4.patch" ]; then
 	patch -p1 --forward < 10_enable_susfs_for_ksu.patch
 	#echo "patch samsung adjusted susfs to ksun as a fix"
  	cd ./kernel/
-	patch -p1 --forward < 159susfs4ksun109.patch
-	cd ../..
+	patch -p1 --forward < 1511susfs4ksun111.patch
+	cd ..
 	#echo "patch susfs in kernel"
 	patch -p1 < 50_add_susfs_in_gki-android12-5.10.patch
 	#do stupid fix for namespace c
 	#echo "patch namespace fix"
 	patch -p1 < hotfixsamsungnamespace.patch
 	#echo "patch syscall_hooks"
-	patch -p1 -F 3 < scope_min_manual_hooks_v1.4.patch
+	patch -p1 -F 3 < scope_min_manual_hooks_v1.5.patch
 fi
 CONFIG_FILE="./arch/arm64/configs/a15_00_defconfig"
 CONFIGS=(
@@ -96,7 +96,7 @@ done
 #echo "configs in a15_00_defconfig echoed"
 #configure the Kernel metadata
 sed -i '$s|echo "\$res"|echo "-android12-9-31117096"|' ./scripts/setlocalversion
-perl -pi -e 's{UTS_VERSION="\$\(echo \$UTS_VERSION \$CONFIG_FLAGS \$TIMESTAMP \| cut -b -\$UTS_LEN\)"}{UTS_VERSION="#1 SMP PREEMPT Thu May 29 08:03:09 UTC 2025"}' ./scripts/mkcompile_h
+perl -pi -e 's{UTS_VERSION="\$\(echo \$UTS_VERSION \$CONFIG_FLAGS \$TIMESTAMP \| cut -b -\$UTS_LEN\)"}{UTS_VERSION="#1 SMP PREEMPT Mon Sep 8 08:09:10 UTC 2025"}' ./scripts/mkcompile_h
 sed -i 's/-dirty//' ./scripts/setlocalversion
 #echo "kernel metadata spoofed"
 #do kernelbuilding
