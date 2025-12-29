@@ -11,32 +11,14 @@ rm kernel
 sed -i 's/!= "1"\]; then/!= "1" \]; then/' ../Kernel/kernel/build/build.sh
 #do ksun
 cd ../Kernel/kernel-5.10/
-find . -type f ! -perm -u=w -exec chmod u+w {} +
 [ ! -d ./KernelSU-Next/ ] && curl -LSs "https://raw.githubusercontent.com/KernelSU-Next/KernelSU-Next/next/kernel/setup.sh" | bash -s v1.1.1
-#do susfs stuff
+find . -type f ! -perm -u=w -exec chmod u+w {} +
 if [ ! -f "./scope_min_manual_hooks_v1.4.patch" ]; then
-    cp ../../gitlab.com-simonpunk/kernel_patches/fs/* ./fs/
+	cp ../../gitlab.com-simonpunk/kernel_patches/fs/* ./fs/
 	cp ../../gitlab.com-simonpunk/kernel_patches/include/linux/* ./include/linux/
 	cp ../../gitlab.com-simonpunk/kernel_patches/KernelSU/10_enable_susfs_for_ksu.patch ./KernelSU-Next/
 	cp ../../gitlab.com-simonpunk/kernel_patches/50_add_susfs_in_gki-android12-5.10.patch ./
 	cp ../../wildplus/next/scope_min_manual_hooks_v1.4.patch ./
-	cp ../../wildplus/next/1512susfs4ksun111.patch ./KernelSU-Next/kernel/
-	#copy stupid fix for namespace c hunk 1 for different define infront insert and hunk 13 for different code after insert
-	cp ../../wildplus/next/hotfixsamsungnamespace.patch ./
-	cd ./KernelSU-Next/
-	#echo "patch susfs to ksun"
-	patch -p1 --forward < 10_enable_susfs_for_ksu.patch
-	#echo "patch samsung adjusted susfs to ksun as a fix"
- 	cd ./kernel/
-	patch -p1 --forward < 1512susfs4ksun111.patch
-	cd ../..
-	#echo "patch susfs in kernel"
-	patch -p1 < 50_add_susfs_in_gki-android12-5.10.patch
-	#do stupid fix for namespace c
-	#echo "patch namespace fix"
-	patch -p1 < hotfixsamsungnamespace.patch
-	#echo "patch syscall_hooks"
-	patch -p1 -F 3 < scope_min_manual_hooks_v1.4.patch
 fi
 CONFIG_FILE="./arch/arm64/configs/a15_00_defconfig"
 CONFIGS=(
@@ -99,21 +81,3 @@ perl -pi -e 's{UTS_VERSION="\$\(echo \$UTS_VERSION \$CONFIG_FLAGS \$TIMESTAMP \|
 sed -i 's/-dirty//' ./scripts/setlocalversion
 #echo "kernel metadata spoofed"
 #do kernelbuilding
-python2 scripts/gen_build_config.py --kernel-defconfig a15_00_defconfig --kernel-defconfig-overlays "entry_level.config" -m user -o ../out/target/product/a15/obj/KERNEL_OBJ/build.config
-export ARCH=arm64
-export PLATFORM_VERSION=12
-export CROSS_COMPILE="aarch64-linux-gnu-"
-export CROSS_COMPILE_COMPAT="arm-linux-gnueabi-"
-export OUT_DIR="../out/target/product/a15/obj/KERNEL_OBJ"
-export DIST_DIR="../out/target/product/a15/obj/KERNEL_OBJ"
-export BUILD_CONFIG="../out/target/product/a15/obj/KERNEL_OBJ/build.config"
-#echo "generated buildconfig and exported build vars"
-cd ../kernel
-LTO=thin ./build/build.sh
-cd ../../maggi
-cp ../Kernel/out/target/product/a15/obj/KERNEL_OBJ/kernel-5.10/arch/arm64/boot/Image ./
-mv Image kernel
-#echo "copied Image for magiskboot"
-../github.com-topjohnwu/x86_64/magiskboot repack ../samsungbootimg/boot.img boot.img
-../github.com-topjohnwu/x86_64/magiskboot sign boot.img ../certificate.pem
-#echo "magiskboot packed and signed boot.img"
