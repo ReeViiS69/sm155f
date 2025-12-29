@@ -671,7 +671,7 @@
 	};
 };
 
-/* /home/dpi/qb5_8814/workspace/P4_1716/android/kernel/kmodule/battery/suwon/charger/sm5714/sm5714_charger.a15.dtsi */
+/* /home/dpi/qb5_8815/workspace/P4_1716/android/kernel/kmodule/battery/suwon/charger/sm5714/sm5714_charger.a15.dtsi */
 &sm5714_charger {
 	sm5714,chg_float_voltage_down_en = <1>;
 	sm5714,chg_float_voltage_down_offset_mv = <20>;
@@ -768,7 +768,7 @@
 	};
 };
 
-/* /home/dpi/qb5_8814/workspace/P4_1716/android/kernel/kmodule/sensorhub/mtk/mt6789_shub/dts/sensorhub_mt6789_shub.a15.dtsi */
+/* /home/dpi/qb5_8815/workspace/P4_1716/android/kernel/kmodule/sensorhub/mtk/mt6789_shub/dts/sensorhub_mt6789_shub.a15.dtsi */
 / {
 	fragment@model {
 		target-path = "/";
@@ -792,7 +792,7 @@
 #include <dt-bindings/clock/mt6789-clk.h>
 
 
-/* /home/dpi/qb5_8814/workspace/P4_1716/android/kernel/kmodule/ap/mtk/mt6789/ap_mtk_mt6789.a15_eur.00.dtsi */
+/* /home/dpi/qb5_8815/workspace/P4_1716/android/kernel/kmodule/ap/mtk/mt6789/ap_mtk_mt6789.a15_eur.00.dtsi */
 #include "../../mediatek/k6789v1_64_titan_minirex_23u/Board_00.dts"
 #include "../../mediatek/k6789v1_64_titan_minirex_23u/gpio00.dtsi"
 
@@ -859,7 +859,7 @@
 	};
 };
 
-/* /home/dpi/qb5_8814/workspace/P4_1716/android/kernel/kmodule/battery/suwon/fuelgauge/sm5714/sm5714_fuelgauge.a15.dtsi */
+/* /home/dpi/qb5_8815/workspace/P4_1716/android/kernel/kmodule/battery/suwon/fuelgauge/sm5714/sm5714_fuelgauge.a15.dtsi */
 /*
  * A15 LTE battery device tree common
  *
@@ -1330,7 +1330,7 @@
 	};
 };
 
-/* /home/dpi/qb5_8814/workspace/P4_1716/android/kernel/kmodule/sec_pm/sec_thermistor/dts/sec_thermistor_mtk.a15.dtsi */
+/* /home/dpi/qb5_8815/workspace/P4_1716/android/kernel/kmodule/sec_pm/sec_thermistor/dts/sec_thermistor_mtk.a15.dtsi */
 &sec_ap_thermistor {
 	adc_array = <94 109 133 156 184 215 262 313 376 465
 				555 689 834 1006 1196 1399 1666 1866 2283 2649
@@ -2068,7 +2068,7 @@
 	};
 };
 
-/* /home/dpi/qb5_8814/workspace/P4_1716/android/kernel/kmodule/input/sec_input_2023/touchscreen/zinitix/zt7650m/dts/input-mtk-tsp-zt7650m.a15.dtsi */
+/* /home/dpi/qb5_8815/workspace/P4_1716/android/kernel/kmodule/input/sec_input_2023/touchscreen/zinitix/zt7650m/dts/input-mtk-tsp-zt7650m.a15.dtsi */
 &tsp_zxt {
 		sec,max_coords = <1081 2341>;
 		sec,bitmask_unload = <0x00FF00 0x004200>;
@@ -2101,7 +2101,7 @@
 };
 
 
-/* /home/dpi/qb5_8814/workspace/P4_1716/android/kernel/kmodule/battery/suwon/common/sec_direct_charger/dts/a15/sec_direct_charger.dtsi */
+/* /home/dpi/qb5_8815/workspace/P4_1716/android/kernel/kmodule/battery/suwon/common/sec_direct_charger/dts/a15/sec_direct_charger.dtsi */
 
 &smd {
 	pass-through {
@@ -2620,7 +2620,7 @@
 #endif
 
 #endif
-/* /home/dpi/qb5_8814/workspace/P4_1716/android/kernel/kmodule/sensors/sx9385/dts/sx9385.a15.dtsi */
+/* /home/dpi/qb5_8815/workspace/P4_1716/android/kernel/kmodule/sensors/sx9385/dts/sx9385.a15.dtsi */
 /delete-node/ &grip_ldo_en;
 
 &pio {
@@ -2710,7 +2710,7 @@
 	};
 };
 
-/* /home/dpi/qb5_8814/workspace/P4_1716/android/kernel/kmodule/input/sec_input_2023/touchscreen/focaltech/ft3418/dts/input-mtk-tsp-ft3418.a15.dtsi */
+/* /home/dpi/qb5_8815/workspace/P4_1716/android/kernel/kmodule/input/sec_input_2023/touchscreen/focaltech/ft3418/dts/input-mtk-tsp-ft3418.a15.dtsi */
 &pio {
 	tsp_i2c_sda_default: tsp_i2c_sda_default {
 		pins_cmd_dat {
@@ -3525,7 +3525,7 @@
 	};
 };
 
-/* /home/dpi/qb5_8814/workspace/P4_1716/android/kernel/kmodule/battery/suwon/common/dts/a15/battery_common.dtsi */
+/* /home/dpi/qb5_8815/workspace/P4_1716/android/kernel/kmodule/battery/suwon/common/dts/a15/battery_common.dtsi */
 #include <dt-bindings/battery/sec-battery.h>
 
 #define MAX_FV 4380

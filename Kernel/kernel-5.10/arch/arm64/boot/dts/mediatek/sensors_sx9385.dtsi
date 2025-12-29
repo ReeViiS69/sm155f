@@ -135,7 +135,7 @@
 #endif
 
 #endif
-/* /home/dpi/qb5_8814/workspace/P4_1716/android/kernel/kmodule/sensors/sx9385/dts/sx9385.a15.dtsi */
+/* /home/dpi/qb5_8815/workspace/P4_1716/android/kernel/kmodule/sensors/sx9385/dts/sx9385.a15.dtsi */
 /delete-node/ &grip_ldo_en;
 
 &pio {

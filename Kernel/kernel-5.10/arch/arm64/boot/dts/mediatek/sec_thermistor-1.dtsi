@@ -18,7 +18,7 @@
 	};
 };
 
-/* /home/dpi/qb5_8814/workspace/P4_1716/android/kernel/kmodule/sec_pm/sec_thermistor/dts/sec_thermistor_mtk.a15.dtsi */
+/* /home/dpi/qb5_8815/workspace/P4_1716/android/kernel/kmodule/sec_pm/sec_thermistor/dts/sec_thermistor_mtk.a15.dtsi */
 &sec_ap_thermistor {
 	adc_array = <94 109 133 156 184 215 262 313 376 465
 				555 689 834 1006 1196 1399 1666 1866 2283 2649
